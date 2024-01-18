@@ -6,8 +6,8 @@ let myYoutubeName = "rishabhdhawaddotcom";
 let anotherName = myYoutubeName;
 anotherName = "ChaiOrCode"
 
-console.log(anotherName);
-console.log(anotherName);
+console.log(myYoutubeName);  // rishabhdhawaddotcom
+console.log(anotherName);  // ChaiOrCode
 
 let userOne = {
     email: "user@google.com",
@@ -18,8 +18,8 @@ let userTwo = userOne;
 
 userTwo.email = "rishabh@google.com";
 
-console.log(userOne.email);
-console.log(userTwo.email);
+console.log(userOne.email);  // rishabh@google.com
+console.log(userTwo.email);  // rishabh@google.com
 
 
 /* 

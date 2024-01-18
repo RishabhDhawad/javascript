@@ -14,7 +14,7 @@ console.log("02" > 1);  //true
 
 console.log(null > 0);  // false
 console.log(null == 0);  // false
-console.log(null >= 0);  // false
+console.log(null >= 0);  // true
 
 /*
 Here the reaseon is that an equality check == and 
