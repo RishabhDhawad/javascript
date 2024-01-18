@@ -33,7 +33,7 @@ console.log(anotherString);
 
 const newStringOne = "    rishabh     "
 console.log(newStringOne);  //    rishabh     
-console.log(newStringOne.trim()); //rishabh
+console.log(newStringOne.trim()); //rishabh  (all spaces are removed)
 
 
 const url = "https://rishabhdotcom/rishabh%20dhawad"
