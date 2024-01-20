@@ -74,3 +74,48 @@ console.log(Object.entries(tinderUser));  // [ [ 'id', '123abc' ], [ 'name', 'Sa
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));  // true
 
 console.log(tinderUser.hasOwnProperty('isLogged'));  // false
+
+
+//  Destructuring 
+
+const course = {
+    courcename: "js in hindi",
+    price: "999",
+    courceInstructor: "rishabh",
+}
+
+// course.courceInstructor
+
+const {courceInstructor} = course
+console.log(courceInstructor);  // rishabh
+
+const {courceInstructor: instructure} = course  // another way
+console.log(instructure);  // rishabh
+
+
+// using destructuring in props
+// this is an example of REACT JS where we have directly used destructuring 
+
+const navbar = ({company}) => {
+
+}
+
+navbar(company = "rishabh")
+
+// API Concept
+
+// Example of JSON
+
+// {
+//     "name": "rishabh",
+//     "courcename": "js in hindi",
+//     "price": "free",
+// }
+
+// API in the form of Arrays
+
+[
+    {},
+    {},
+    {}
+]
