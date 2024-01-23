@@ -61,3 +61,37 @@ console.log(loginUserMessage("rishabh"))  // rishabh just logged in
 console.log(loginUserMessage(""))  // just logged in
 
 console.log(loginUserMessage())  //Please enter a username, undefined
+
+// SItuation where we dont know how many arguments will come inside the function
+
+function calculateCartPrice(...num1) { //(...num) here these 3 dots are a rest operator
+    return num1
+}
+
+console.log(calculateCartPrice(200, 400, 500, 2000));  // [ 200, 400, 500, 2000 ]
+
+const user = {
+    username : "rishabh",
+    price: 499
+}
+
+function handleObject(anyobject){
+    console.log(`username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+handleObject(user)  // username is rishabh and price is 499
+
+// another way to write this
+handleObject({
+    username: "ram",
+    price: 399
+})   // username is ram and price is 399
+
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1]
+}
+
+console.log(returnSecondValue(myNewArray));  // 400
+console.log(returnSecondValue([200, 400, 100, 600]));  // 400
