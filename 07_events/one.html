@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+    // This approach we generally dont use
+
+    // document.getElementById('owl').onclick = function(){
+    //     alert("Owl Clicked")
+    // }
+
+
+    // The best approach is written on the last line 
+
+
+    // There is another approach
+    // attachEvent()
+    // jQueary - on
+
+
+    // What all events we have to sudy
+
+    // type, timestamp , defaultPrevented
+    // target, toElement, srcElementm currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    // EVENT PROPOGATIN
+    // writing true and false on the 3rd parameter
+    
+    // Event Bubbling (most used - false as default) and Event Capturing
+
+    // EVENT BUBBLING - starting from the inside ad the movinf towards outside (here first "Owl Clicked will run" the "Clicked inside the ul " will run when we click on the owl image)
+
+    // EVENT CAPTURING -  this work from top to bottom (when we put true in the 3rd parameter then first "Clicked inside the ul " will run and then "Owl clicked" will run)
+    
+    
+    
+    // This is the best approach
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log('Click inside the ul');
+    }, false)  // we generally give a 3rd parameter (false) , default is also false, so we dont generally need to write false
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log('Owl Clicked');
+        e.stopPropagation()  // This will stop the propogation of the event bubbling
+    }, false) 
+
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Google Clicked');
+    }, false)
+
+    // EVENT IN PROJECT STYLE
+
+    // remove an image when clicked on it
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName);
+
+        if(e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+
+        //let removeIt = e.target.parentNode
+        
+        //removeIt.remove() // this is the best way to remove and easy way
+
+        // removeIt.parentNode.removeChild(removeIt) (this is an alteranate )
+
+
+    }, false)
+
+    
+</script>
+
+</html>
